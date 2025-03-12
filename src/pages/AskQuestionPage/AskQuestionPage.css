@@ -1,0 +1,147 @@
+.ask-question-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+}
+
+h2 {
+  font-size: 1.875rem;
+  color: #1e293b;
+  margin-bottom: 2rem;
+  font-weight: 600;
+}
+
+.instructions {
+  background: #f8fafc;
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 2.5rem;
+  border: 1px solid #e2e8f0;
+}
+
+.instructions h3 {
+  font-size: 1.25rem;
+  color: #475569;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.instructions ul {
+  list-style: none;
+  padding-left: 0;
+  display: grid;
+  gap: 1.5rem;
+}
+
+.instructions li {
+  position: relative;
+  padding-left: 2rem;
+  color: #475569;
+  line-height: 1.6;
+}
+
+.instructions li::before {
+  content: "•";
+  color: #4f46e5;
+  font-weight: 700;
+  position: absolute;
+  left: 0;
+  top: -0.1rem;
+  font-size: 1.4rem;
+}
+
+.ask-question-form {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+}
+
+.ask-question-form label {
+  display: block;
+  font-weight: 500;
+  color: #1e293b;
+  margin-bottom: 0.75rem;
+}
+
+.ask-question-form input,
+.ask-question-form textarea {
+  width: 100%;
+  padding: 0.875rem 1rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  transition: all 0.2s ease;
+}
+
+.ask-question-form input:focus,
+.ask-question-form textarea:focus {
+  outline: none;
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.1);
+}
+
+.ask-question-form textarea {
+  height: 150px;
+  resize: vertical;
+}
+
+button[type="submit"] {
+  background: #4f46e5;
+  color: white;
+  padding: 0.875rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  width: 100%;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  margin-top: 1rem;
+}
+
+button[type="submit"]:hover {
+  background: #4338ca;
+  transform: translateY(-1px);
+}
+
+@media (max-width: 768px) {
+  .ask-question-container {
+    padding: 0 1rem;
+    margin: 1rem auto;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .instructions {
+    padding: 1.5rem;
+  }
+
+  .ask-question-form {
+    padding: 1.5rem;
+  }
+
+  .ask-question-form textarea {
+    height: 120px;
+  }
+}
+
+@media (max-width: 480px) {
+  h2 {
+    font-size: 1.375rem;
+  }
+
+  .instructions li {
+    font-size: 0.875rem;
+  }
+
+  .ask-question-form input,
+  .ask-question-form textarea {
+    font-size: 0.8125rem;
+  }
+}

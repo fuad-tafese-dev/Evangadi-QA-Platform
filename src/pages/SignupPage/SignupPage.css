@@ -1,0 +1,147 @@
+.signup-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.signup-form {
+  flex: 1;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  margin-right: 20px;
+}
+
+.signup-form h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.signup-form p {
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.signup-form a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.signup-form a:hover {
+  text-decoration: underline;
+}
+
+.form-group {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.form-group input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.signup-form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.terms {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.signup-form button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.signup-form button:hover {
+  background-color: #0056b3;
+}
+
+.about-section {
+  flex: 1;
+  padding: 20px;
+  background-color: #e9ecef;
+  border-radius: 8px;
+}
+
+.about-section h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.about-section h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.about-section p {
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+.how-it-works {
+  margin-top: 20px;
+}
+
+.how-it-works h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.how-it-works table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.how-it-works td {
+  padding: 8px;
+  border-bottom: 1px solid #ccc;
+}
+
+.how-it-works a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.how-it-works a:hover {
+  text-decoration: underline;
+}
+.how-it-works-button {
+  background-color: #4169e1; /* Blue color */
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+}
+@media (max-width: 768px) {
+  .signup-container {
+    flex-direction: column;
+  }
+
+  .signup-form {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+}
