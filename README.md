@@ -17,7 +17,7 @@ Evangadi Q&A Platform is a full-stack web application that enables users to ask 
 - **Hosting**:
   - Frontend: Vercel
   - Backend: Render
-  - Database: PlanetScale
+  - Database: Railway
 
 ## Installation & Setup
 ### Backend Setup
