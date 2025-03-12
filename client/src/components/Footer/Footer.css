@@ -1,0 +1,79 @@
+.footer {
+  background-color: #343a40; /* Dark background */
+  color: #fff;
+  padding: 40px 0;
+}
+
+.container {
+  display: flex;
+  justify-content: space-around;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer-section {
+  flex: 1;
+  text-align: left;
+}
+
+.logo-section {
+  max-width: 200px; /* Adjust as needed */
+}
+
+.evangadi-logo {
+  font-family: "Arial Black", sans-serif; /* Bold font */
+  font-size: 2em;
+  font-weight: 900;
+  margin-bottom: 20px;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+}
+
+.social-icon {
+  color: #fff;
+  font-size: 1.5em;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+  color: #ff9900; /* Orange on hover */
+}
+
+.section-title {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+
+.footer-link {
+  display: block;
+  color: #ccc;
+  text-decoration: none;
+  margin-bottom: 10px;
+  transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+  color: #fff;
+}
+
+.contact-text {
+  margin-bottom: 8px;
+}
+
+/* Responsive Styles */
+/* @media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .footer-section {
+    text-align: center;
+  }
+} */
