@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-    baseURL: "https://your-backend.onrender.com/api", // Use Render backend URL
+    baseURL: "https://evangadi-qa-platform.onrender.com/api", // Use Render backend URL
     headers: {
         "Content-Type": "application/json",
     },
