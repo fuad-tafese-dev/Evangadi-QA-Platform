@@ -1,15 +1,15 @@
-import axios from 'axios';
+import axios from "axios";
 
 const api = axios.create({
-    baseURL: "https://evangadi-qa-platform.onrender.com/api", // Updated to Render backend URL
+    baseURL: "https://your-backend.onrender.com/api", // Use Render backend URL
     headers: {
-        "Content-Type": "application/json"
-    }
+        "Content-Type": "application/json",
+    },
 });
 
 // Attach token if available
-api.interceptors.request.use(config => {
-    const token = localStorage.getItem('token');
+api.interceptors.request.use((config) => {
+    const token = localStorage.getItem("token");
     if (token) {
         config.headers.Authorization = `Bearer ${token}`;
     }
