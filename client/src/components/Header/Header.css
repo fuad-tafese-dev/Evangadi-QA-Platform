@@ -1,11 +1,12 @@
 .header {
   position: sticky;
-  top: 0; /* Ensures it sticks to the top */
-  z-index: 1000; /* Ensures it stays above other elements */
-  height: 65px;
+  top: 0;
+  z-index: 1000;
+  height: auto; /* Changed from fixed height */
+  min-height: 65px;
   width: 100%;
   background-color: #f0f0f0;
-  padding: 10px 0; /* Reduced padding to prevent overflow */
+  padding: 10px 0;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -16,46 +17,44 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
+  position: relative; /* For absolute positioning of mobile menu */
 }
 
 .logo {
   font-size: 1.75rem;
   font-weight: bold;
+  z-index: 1001; /* Ensure logo stays above menu */
 }
 
-.logo-link {
-  text-decoration: none;
-  color: #333;
-  display: flex;
-  align-items: center;
+/* Hamburger Menu Styles */
+.hamburger {
+  display: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 1001;
 }
 
-.evangadi-logo {
-  font-family: "Arial Black", sans-serif; /* Bold font */
-  font-size: 2.8rem; /* Larger size */
-  font-weight: 900; /* Bolder weight */
-  color: #333; /* Dark gray color */
-  letter-spacing: 2px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow */
-  margin-right: 10px;
-  position: relative; /* For pseudo-elements */
-}
-
-/* Orange stripes with gradient */
-.evangadi-logo::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 10px;
-  width: 20px;
+.hamburger span {
+  display: block;
+  width: 25px;
   height: 3px;
-  background-image: linear-gradient(to right, #ff9900, #ffc107); /* Gradient */
-  transform: translateY(-50%) rotate(-15deg);
-  box-shadow: 0 8px 0 #ff9900, 0 16px 0 #ff9900;
+  background-color: #333;
+  margin: 5px 0;
+  transition: 0.3s;
 }
 
-.evangadi-logo span {
-  color: #ff9900; /* Orange color for 'V' and 'A' */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -6px);
 }
 
 .nav-links {
@@ -64,48 +63,44 @@
   gap: 20px;
 }
 
-.nav-link {
-  text-decoration: none;
-  color: #333;
-  font-weight: 500;
-  transition: color 0.2s ease; /* Smooth color transition */
-}
-
-.nav-link:hover {
-  color: #ff9900; /* Orange on hover */
-}
-
-.auth-buttons {
+.nav-links.active {
   display: flex;
-  gap: 10px;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: #f0f0f0;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.sign-in-button {
-  background-color: #4169e1;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-weight: 600;
-  text-decoration: none;
-  transition: background-color 0.2s ease; /* Smooth background transition */
-}
-
-.sign-in-button:hover {
-  background-color: #3659c7;
-}
-
-/* Responsive Styles (using media queries) */
+/* Mobile Styles */
 @media (max-width: 768px) {
-  .header {
-    width: 100%;
-  }
-  .nav-links {
-    margin-top: 10px;
+  .hamburger {
+    display: block;
   }
 
-  .auth-buttons {
-    margin-top: 10px;
+  .nav-links {
+    display: none;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .evangadi-logo {
+    font-size: 2rem;
+  }
+
+  .nav-link {
+    padding: 10px 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  .sign-in-button {
+    width: 100%;
+    text-align: center;
   }
 }

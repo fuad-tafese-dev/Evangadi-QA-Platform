@@ -8,7 +8,19 @@ const questionRoute = require("./routes/questionRoute");
 const answerRoute = require("./routes/answerRoute");
 const bodyParser = require("body-parser");
 
-app.use(cors({ origin: process.env.FRONTEND_URL })); // Allow frontend access
+app.use(
+    cors({
+        origin: function (origin, callback) {
+            if (!origin || origin === process.env.FRONTEND_URL) {
+                callback(null, true);
+            } else {
+                callback(new Error("Not allowed by CORS"));
+            }
+        },
+        credentials: true, // Important for handling authentication
+    })
+);
+
 app.use(bodyParser.json());
 
 app.use("/api/user", userRoute);

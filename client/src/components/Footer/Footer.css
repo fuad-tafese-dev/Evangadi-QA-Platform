@@ -30,6 +30,7 @@
 
 .social-icons {
   display: flex;
+  justify-content: left;
   gap: 15px;
 }
 
@@ -60,20 +61,28 @@
 .footer-link:hover {
   color: #fff;
 }
+.links-section {
+  margin-left: 5rem;
+}
 
 .contact-text {
   margin-bottom: 8px;
 }
 
 /* Responsive Styles */
-/* @media (max-width: 768px) {
+@media (max-width: 768px) {
   .container {
     flex-direction: column;
     align-items: center;
     gap: 30px;
   }
-
+  .links-section {
+    margin: auto;
+  }
   .footer-section {
     text-align: center;
   }
-} */
+  .social-icons {
+    justify-content: center;
+  }
+}

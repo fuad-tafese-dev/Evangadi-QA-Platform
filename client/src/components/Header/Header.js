@@ -1,21 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react'; // Add useState import
 import { Link, useNavigate } from 'react-router-dom';
-import './Header.css'; // Import the updated CSS
-import api from '../../services/api'; // Assuming this handles API requests
+import './Header.css';
+import api from '../../services/api';
 
 const Header = () => {
     const navigate = useNavigate();
-    const token = localStorage.getItem('token'); // Retrieve token to check login state
+    const token = localStorage.getItem('token');
+    const [isMenuOpen, setIsMenuOpen] = useState(false); // Mobile menu state
 
     const handleLogout = () => {
-        // Remove authentication data
         localStorage.removeItem('token');
         localStorage.removeItem('user');
-
-        // Redirect to landing page
         navigate('/');
+        setIsMenuOpen(false); // Close menu on logout
     };
-
 
     return (
         <header className="header">
@@ -25,18 +23,24 @@ const Header = () => {
                         <span className="evangadi-logo">EVANGADI</span>
                     </Link>
                 </div>
-                <nav className="nav-links">
-                    <Link to={token ? "/home" : "/"} className="nav-link">Home</Link>
 
-                    <Link to="/how-it-works" className="nav-link">How it Works</Link>
+                {/* Hamburger Menu Button */}
+                <button
+                    className={`hamburger ${isMenuOpen ? 'active' : ''}`}
+                    onClick={() => setIsMenuOpen(!isMenuOpen)}
+                >
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <nav className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
+                    <Link to={token ? "/home" : "/"} className="nav-link" onClick={() => setIsMenuOpen(false)}>Home</Link>
+                    <Link to="/how-it-works" className="nav-link" onClick={() => setIsMenuOpen(false)}>How it Works</Link>
                     {token ? (
-                        <>
-                            {/* <Link to="/home" className="nav-link">Questions</Link>
-                            <Link to="/ask" className="nav-link">Ask Question</Link> */}
-                            <button onClick={handleLogout} className="sign-in-button">Logout</button> {/* Logout button */}
-                        </>
+                        <button onClick={handleLogout} className="sign-in-button">Logout</button>
                     ) : (
-                        <Link to="/login" className="sign-in-button">SIGN IN</Link> // Sign in button if not logged in
+                        <Link to="/login" className="sign-in-button" onClick={() => setIsMenuOpen(false)}>SIGN IN</Link>
                     )}
                 </nav>
             </div>
