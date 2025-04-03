@@ -79,7 +79,7 @@ Evangadi Q&A Platform is a full-stack web application that enables users to ask 
 - Answer existing questions
 
 ## Live Demo
-[Frontend Live]([https://your-vercel-url](https://evangadi-qa-platform.netlify.app)) | [Backend API]([https://your-render-url](https://evangadi-qa-platform.onrender.com/api))
+[Frontend Live](https://evangadi-qa-platform.netlify.app) | [Backend API](https://evangadi-qa-platform.onrender.com/api)
 
 ## Contact
 For inquiries, reach out via [LinkedIn](https://linkedin.com/in/yourprofile).
